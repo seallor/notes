@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Тестовое задание Notes</title>
-</head>
-<body>
-    <h1>Записки</h1>
-</body>
+<html>
+    <head>
+        <title>Notes</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Записки</a></h1>
+        </div>
+
+        {% for note in notes %}
+            <div>
+                <h3><a href="">{{ note.title }}</a></h3>
+                <p>{{ note.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
 </html>

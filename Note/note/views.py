@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Note
 
 
 def index(request):
-    return render(request, 'note/index.html', {})
+    notes = Note.objects.order_by('unique_words')
+    return render(request, 'note/index.html', {'notes': notes})
 # Create your views here.
